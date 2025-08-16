@@ -49,18 +49,25 @@ export function createDb(dbPath = path.join(__dirname, '..', 'data.sqlite')) {
 export async function callGroq({ model, prompt, max_tokens }) {
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) throw new Error('GROQ_API_KEY is not set');
-    const url = process.env.GROQ_API_URL || 'https://api.groq.com/openai/v1/completions';
+    // Use OpenAI-compatible Chat Completions endpoint
+    const url = process.env.GROQ_API_URL || 'https://api.groq.com/openai/v1/chat/completions';
+    const body = {
+        model,
+        messages: [{ role: 'user', content: prompt }],
+        max_tokens: max_tokens ?? 800,
+        stream: false
+    };
     const resp = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
-        body: JSON.stringify({ model, prompt, max_tokens })
+        body: JSON.stringify(body)
     });
     if (!resp.ok) {
         const text = await resp.text();
         throw new Error(`Groq API error: ${resp.status} ${text}`);
     }
     const data = await resp.json();
-    const output = data?.choices?.[0]?.text ?? data?.output ?? JSON.stringify(data);
+    const output = data?.choices?.[0]?.message?.content ?? data?.choices?.[0]?.text ?? data?.output ?? JSON.stringify(data);
     return output;
 }
 
@@ -144,7 +151,7 @@ export function createApp({ db } = {}) {
                 const p = database.prepare('SELECT * FROM prompts WHERE transcript_id = ? ORDER BY created_at DESC LIMIT 1').get(transcriptId);
                 if (p) { prompt = p.prompt; pId = p.id; }
             }
-            const payload = { model: process.env.GROQ_MODEL || 'groq-lite', prompt: `${prompt}\n\nTranscript:\n${t.content}`, max_tokens: 800 };
+            const payload = { model: process.env.GROQ_MODEL || 'llama3-8b-8192', prompt: `${prompt}\n\nTranscript:\n${t.content}`, max_tokens: 800 };
             const groqCaller = app.locals.callGroq || callGroq;
             const output = await groqCaller(payload);
             const id = uuidv4();
