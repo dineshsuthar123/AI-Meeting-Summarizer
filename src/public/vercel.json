@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "https://ai-meeting-summarizer-u1qr.onrender.com/api/$1"
+        }
+    ]
+}
