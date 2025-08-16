@@ -1,0 +1,5 @@
+# Frontend static build (optional if using same Express to serve)
+# Here we just serve /src/public as static via nginx
+FROM nginx:alpine
+COPY src/public /usr/share/nginx/html
+EXPOSE 80

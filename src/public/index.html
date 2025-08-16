@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meeting Summarizer</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Meeting Summarizer</h1>
+            <p class="subtitle">Upload a transcript, generate an AI summary, edit it, and share by email.</p>
+        </header>
+
+        <div class="section card">
+            <label>Upload transcript (.txt or .md) or paste text</label>
+            <div class="row">
+                <input id="file" type="file" accept=".txt,.md" title="Upload transcript file" />
+                <button class="btn primary" id="uploadBtn">Upload</button>
+            </div>
+            <div>or paste below:</div>
+            <textarea id="rawText" placeholder="Paste transcript text here..."></textarea>
+            <div class="actions">
+                <button class="btn" id="uploadTextBtn">Upload Text</button>
+                <span id="uploadStatus" class="small"></span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="section card">
+                <label>Transcript</label>
+                <textarea id="transcript" readonly title="Transcript preview"
+                    placeholder="Transcript will appear here after upload"></textarea>
+            </div>
+
+            <div class="section card">
+                <label>Prompt</label>
+                <div class="row">
+                    <input id="prompt" type="text" placeholder="Summarize in bullet points for executives" />
+                    <button class="btn" id="setPrompt">Save Prompt</button>
+                </div>
+                <div class="actions">
+                    <button class="btn primary" id="genSummary">Generate Summary</button>
+                </div>
+                <label class="mt-075">Summary (editable)</label>
+                <textarea id="summary" title="Editable summary"
+                    placeholder="Generated summary will appear here; you can edit before sharing"></textarea>
+                <div class="actions">
+                    <button class="btn" id="saveEdits">Save Edits</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section card">
+            <label>Share via Email</label>
+            <div class="row">
+                <input id="emails" type="text" placeholder="alice@example.com, bob@example.com" />
+                <button class="btn" id="share">Send Email</button>
+            </div>
+            <div id="shareStatus" class="small mt-05"></div>
+        </div>
+
+        <footer class="footer small">Tip: Save your edits before sharing to ensure emails include your changes.</footer>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
