@@ -203,7 +203,12 @@ export function createApp({ db } = {}) {
         }
     });
 
+    // Serve static frontend
     app.use(express.static(path.join(__dirname, 'public')));
+    // Explicit root route for environments that don't auto-serve index.html
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    });
 
     app.locals.db = database;
     return app;
