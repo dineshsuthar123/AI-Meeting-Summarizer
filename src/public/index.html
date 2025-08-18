@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meeting Summarizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta name="theme-color" content="#0d1524" />
     <link rel="stylesheet" href="/styles.css" />
 </head>
 
@@ -18,12 +23,13 @@
     </nav>
 
     <div class="container">
-        <header class="header">
-            <h1>Turn meetings into crisp summaries</h1>
-            <p class="subtitle">Upload a transcript, generate an AI summary, edit it, and share by email.</p>
+        <header class="header reveal">
+            <h1 class="gradient-text">Turn meetings into crisp summaries</h1>
+            <p class="subtitle">Upload a transcript, generate an <span class="accent-text">AI</span> summary, edit it,
+                and share by email.</p>
         </header>
 
-        <div class="section card">
+        <div class="section card reveal">
             <label>Upload transcript (.txt or .md) or paste text</label>
             <div id="dropzone" class="dropzone" aria-label="Drop transcript file here">
                 <div class="dropzone-inner">
@@ -52,13 +58,13 @@
         </div>
 
         <div class="grid">
-            <div class="section card">
+            <div class="section card reveal">
                 <label>Transcript</label>
                 <textarea id="transcript" readonly title="Transcript preview"
                     placeholder="Transcript will appear here after upload"></textarea>
             </div>
 
-            <div class="section card">
+            <div class="section card reveal">
                 <label>Prompt</label>
                 <div class="row">
                     <input id="prompt" type="text" placeholder="Summarize in bullet points for executives" />
@@ -72,11 +78,12 @@
                     placeholder="Generated summary will appear here; you can edit before sharing"></textarea>
                 <div class="actions">
                     <button class="btn" id="saveEdits">Save Edits</button>
+                    <button class="btn" id="copySummary" title="Copy summary to clipboard">Copy</button>
                 </div>
             </div>
         </div>
 
-        <div class="section card">
+        <div class="section card reveal">
             <label>Share via Email</label>
             <div class="row">
                 <input id="emails" type="text" placeholder="alice@example.com, bob@example.com" />

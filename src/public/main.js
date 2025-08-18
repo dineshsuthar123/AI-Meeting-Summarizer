@@ -14,6 +14,21 @@ function setBusy(on) {
     b.classList.toggle('hidden', !on);
 }
 
+function showToast(message) {
+    try {
+        const t = document.createElement('div');
+        t.className = 'toast';
+        t.textContent = message;
+        document.body.appendChild(t);
+        setTimeout(() => {
+            t.style.transition = 'opacity .2s ease, transform .2s ease';
+            t.style.opacity = '0';
+            t.style.transform = 'translateY(8px)';
+            setTimeout(() => t.remove(), 220);
+        }, 1800);
+    } catch { /* no-op */ }
+}
+
 async function uploadFile() {
     setBusy(true);
     const f = el('file').files[0];
@@ -70,6 +85,7 @@ async function setPrompt() {
         const data = await toJsonSafe(res);
         if (!res.ok) return alert(data.error || data._raw || 'Failed to save prompt');
         state.promptId = data.promptId;
+        showToast('Prompt saved');
     } finally { setBusy(false); }
 }
 
@@ -86,6 +102,7 @@ async function genSummary() {
         if (!res.ok) return alert(data.error || data._raw || 'Generation failed');
         state.summaryId = data.summaryId;
         el('summary').value = data.raw;
+        showToast('Summary ready');
     } finally { setBusy(false); }
 }
 
@@ -101,7 +118,7 @@ async function saveEdits() {
         });
         const data = await toJsonSafe(res);
         if (!res.ok) return alert(data.error || data._raw || 'Save failed');
-        alert('Saved');
+        showToast('Saved');
     } finally { setBusy(false); }
 }
 
@@ -119,7 +136,31 @@ async function share() {
         const data = await toJsonSafe(res);
         if (!res.ok) return alert(data.error || data._raw || 'Share failed');
         el('shareStatus').textContent = `Sent. Message ID: ${data.messageId}`;
+        showToast('Email sent');
     } finally { setBusy(false); }
+}
+
+async function copySummary() {
+    const val = el('summary').value;
+    if (!val) return alert('Nothing to copy');
+    try {
+        if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(val);
+        } else {
+            const ta = document.createElement('textarea');
+            ta.value = val;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'absolute';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+        }
+        showToast('Copied to clipboard');
+    } catch {
+        alert('Copy failed');
+    }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -128,6 +169,8 @@ window.addEventListener('DOMContentLoaded', () => {
     el('setPrompt').addEventListener('click', setPrompt);
     el('genSummary').addEventListener('click', genSummary);
     el('saveEdits').addEventListener('click', saveEdits);
+    const copyBtn = el('copySummary');
+    if (copyBtn) copyBtn.addEventListener('click', copySummary);
     el('share').addEventListener('click', share);
     // Browse button
     const browse = document.getElementById('browseBtn');
@@ -143,5 +186,21 @@ window.addEventListener('DOMContentLoaded', () => {
             el('file').files = e.dataTransfer.files; // best-effort; may be ignored in some browsers
             await uploadFile();
         });
+    }
+
+    // Reveal-on-scroll
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && reveals.length) {
+        const io = new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    io.unobserve(entry.target);
+                }
+            }
+        }, { threshold: 0.08 });
+        reveals.forEach(el => io.observe(el));
+    } else {
+        reveals.forEach(el => el.classList.add('visible'));
     }
 });

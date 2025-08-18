@@ -43,9 +43,10 @@ body {
         radial-gradient(900px 500px at 10% -10%, rgba(64, 201, 255, .15), transparent 50%),
         linear-gradient(180deg, var(--bg), #0a1220 60%, #070e1a);
     color: var(--text);
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
 }
 
 .accent {
@@ -113,6 +114,22 @@ body {
     border-radius: 16px;
     padding: 18px 18px 16px 18px;
     box-shadow: var(--glow), 0 6px 22px rgba(0, 0, 0, .25);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(123, 108, 255, .35), rgba(64, 201, 255, .25) 40%, transparent 60%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+    border-radius: 16px;
 }
 
 .section {
@@ -158,16 +175,21 @@ textarea {
     border-radius: 12px;
     padding: 12px 14px;
     outline: none;
+    transition: border-color .15s ease, background-color .15s ease, box-shadow .2s ease;
 }
 
 input[type="text"]:focus,
 textarea:focus {
-    border-color: var(--primary)
+    border-color: var(--primary);
+    /* fallback */
+    box-shadow: 0 0 0 3px rgba(123, 108, 255, .25);
+    /* enhanced */
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 25%, transparent 75%);
 }
 
 textarea {
     min-height: 200px;
-    resize: vertical
+    resize: vertical;
 }
 
 .actions {
@@ -200,11 +222,43 @@ textarea {
 
 .btn.primary {
     background: linear-gradient(180deg, var(--primary), var(--primary-600));
-    border-color: transparent
+    border-color: transparent;
+    box-shadow: var(--glow)
 }
 
 .btn.primary:hover {
     filter: brightness(1.05)
+}
+
+.btn.primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.primary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .25), transparent);
+    transform: translateX(-120%);
+}
+
+.btn.primary:hover::after {
+    transition: transform .6s ease;
+    transform: translateX(120%);
+}
+
+.btn:focus-visible {
+    outline: none;
+    /* fallback */
+    box-shadow: 0 0 0 3px rgba(123, 108, 255, .25);
+    /* enhanced */
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 25%, transparent 75%);
+}
+
+.btn.ghost {
+    background: transparent;
+    border-color: transparent;
 }
 
 .footer {
@@ -240,6 +294,14 @@ textarea {
 
 .dropzone svg {
     color: var(--primary)
+}
+
+.dropzone.dragging {
+    border-color: var(--primary);
+    /* fallback */
+    background: var(--glass);
+    /* enhanced */
+    background: color-mix(in oklab, var(--primary) 8%, var(--glass));
 }
 
 .dz-title {
@@ -290,5 +352,92 @@ textarea {
 @keyframes spin {
     to {
         transform: rotate(360deg)
+    }
+}
+
+/* Selection */
+::selection {
+    /* fallback */
+    background: rgba(123, 108, 255, .3);
+    /* enhanced */
+    background: color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+/* Gradient headline + accent text */
+.gradient-text {
+    /* fallback */
+    color: var(--text);
+    /* enhanced */
+    background: linear-gradient(90deg, var(--text), color-mix(in oklab, var(--primary) 60%, var(--text)) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.accent-text {
+    /* fallback */
+    color: var(--primary);
+    /* enhanced: color-mix(in oklab, var(--primary) 85%, var(--text)) */
+}
+
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Textarea specializations */
+#transcript {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: .95rem;
+    line-height: 1.45;
+}
+
+#summary {
+    line-height: 1.55;
+}
+
+input::placeholder,
+textarea::placeholder {
+    /* fallback */
+    color: var(--muted);
+    /* enhanced */
+    /* fallback */
+    color: var(--muted);
+    /* enhanced: color-mix(in oklab, var(--muted) 85%, transparent) */
+}
+
+@media (min-width: 900px) {
+    .header h1 {
+        font-size: 40px;
+    }
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 200;
+    background: linear-gradient(180deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: var(--glow), 0 6px 22px rgba(0, 0, 0, .25);
+    opacity: 0;
+    transform: translateY(8px);
+    animation: toast-in .25s ease forwards;
+}
+
+@keyframes toast-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
