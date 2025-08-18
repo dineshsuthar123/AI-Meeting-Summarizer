@@ -5,23 +5,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meeting Summarizer</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
+    <div class="accent"></div>
+    <nav class="topbar">
+        <div class="brand">AI Meeting Summarizer</div>
+        <div class="topbar-actions">
+            <button class="btn ghost" id="themeToggle" title="Toggle theme">Theme</button>
+        </div>
+    </nav>
+
     <div class="container">
         <header class="header">
-            <h1>Meeting Summarizer</h1>
+            <h1>Turn meetings into crisp summaries</h1>
             <p class="subtitle">Upload a transcript, generate an AI summary, edit it, and share by email.</p>
         </header>
 
         <div class="section card">
             <label>Upload transcript (.txt or .md) or paste text</label>
-            <div class="row">
-                <input id="file" type="file" accept=".txt,.md" title="Upload transcript file" />
-                <button class="btn primary" id="uploadBtn">Upload</button>
+            <div id="dropzone" class="dropzone" aria-label="Drop transcript file here">
+                <div class="dropzone-inner">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true">
+                        <path d="M12 3v14m0-14l-4 4m4-4l4 4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div>
+                        <div class="dz-title">Drag & drop your transcript</div>
+                        <div class="small">or</div>
+                    </div>
+                    <div class="dz-actions">
+                        <input id="file" type="file" accept=".txt,.md" title="Upload transcript file" />
+                        <button class="btn" id="browseBtn" type="button">Browse</button>
+                        <button class="btn primary" id="uploadBtn" type="button">Upload</button>
+                    </div>
+                </div>
             </div>
-            <div>or paste below:</div>
+            <div class="or">— or paste below —</div>
             <textarea id="rawText" placeholder="Paste transcript text here..."></textarea>
             <div class="actions">
                 <button class="btn" id="uploadTextBtn">Upload Text</button>
@@ -66,7 +88,25 @@
         <footer class="footer small">Tip: Save your edits before sharing to ensure emails include your changes.</footer>
     </div>
 
+    <div id="busy" class="busy hidden" aria-live="polite" aria-busy="true">
+        <div class="spinner"></div>
+        <div>Working…</div>
+    </div>
+
     <script src="./main.js"></script>
+    <script>
+        // Theme toggle (light/dark)
+        const root = document.documentElement;
+        document.getElementById('themeToggle')?.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+        (function initTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved) root.setAttribute('data-theme', saved);
+        })();
+    </script>
 </body>
 
 </html>
