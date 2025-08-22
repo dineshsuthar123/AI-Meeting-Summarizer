@@ -1,443 +1,1869 @@
+/* NEXUS AI - QUANTUM CONSCIOUSNESS INTERFACE */
+
+/* === QUANTUM REALITY ENGINE === */
 :root {
-    --bg: #070c16;
-    --panel: #0d1524;
-    --panel-2: #101a2d;
-    --text: #e9eef7;
-    --muted: #9aa3b2;
-    --primary: #7b6cff;
-    --primary-600: #5f52ff;
-    --border: #24304a;
-    --shade: #0f1728;
-    --glass: rgba(255, 255, 255, .06);
-    --glow: 0 10px 40px rgba(123, 108, 255, .25);
+    /* Quantum Void - The Beginning */
+    --void-black: #000000;
+    --void-deep: #0a0a0f;
+    --void-matrix: #141419;
+    --void-neural: #1e1e28;
+    --void-synaptic: #28283c;
+
+    /* Holographic Spectrum - Pure Energy */
+    --holo-cyan: #00ffff;
+    --holo-electric: #0080ff;
+    --holo-violet: #8000ff;
+    --holo-magenta: #ff00ff;
+    --holo-crimson: #ff0080;
+    --holo-gold: #ffaa00;
+    --holo-lime: #80ff00;
+    --holo-plasma: #ff4080;
+
+    /* Consciousness Layers */
+    --consciousness-dormant: rgba(255, 255, 255, 0.1);
+    --consciousness-aware: rgba(0, 255, 255, 0.2);
+    --consciousness-active: rgba(128, 0, 255, 0.3);
+    --consciousness-transcendent: rgba(255, 0, 128, 0.4);
+
+    /* Neural Text Hierarchy */
+    --text-quantum: #ffffff;
+    --text-neural: #e6f3ff;
+    --text-synaptic: #ccddff;
+    --text-dormant: #9966cc;
+    --text-holo: var(--holo-cyan);
+    --text-plasma: var(--holo-plasma);
+
+    /* Quantum Surfaces */
+    --surface-void: rgba(0, 0, 0, 0.95);
+    --surface-neural: rgba(10, 10, 15, 0.9);
+    --surface-synaptic: rgba(20, 20, 25, 0.85);
+    --surface-conscious: rgba(30, 30, 40, 0.8);
+    --surface-hologram: rgba(0, 255, 255, 0.05);
+    --surface-plasma: rgba(255, 64, 128, 0.05);
+    --surface-glass: rgba(255, 255, 255, 0.02);
+
+    /* Quantum Gradients - Reality Bending */
+    --gradient-consciousness: linear-gradient(135deg,
+            var(--holo-cyan) 0%,
+            var(--holo-electric) 25%,
+            var(--holo-violet) 50%,
+            var(--holo-magenta) 75%,
+            var(--holo-crimson) 100%);
+
+    --gradient-neural-web: radial-gradient(circle at 50% 50%,
+            var(--holo-cyan) 0%,
+            transparent 70%);
+
+    --gradient-holographic: conic-gradient(from 0deg at 50% 50%,
+            var(--holo-cyan),
+            var(--holo-electric),
+            var(--holo-violet),
+            var(--holo-magenta),
+            var(--holo-crimson),
+            var(--holo-gold),
+            var(--holo-lime),
+            var(--holo-cyan));
+
+    --gradient-quantum-tunnel: linear-gradient(180deg,
+            transparent 0%,
+            var(--consciousness-aware) 50%,
+            transparent 100%);
+
+    --gradient-plasma-field: radial-gradient(ellipse 150% 100% at 50% 0%,
+            var(--holo-plasma) 0%,
+            var(--holo-violet) 40%,
+            transparent 70%);
+
+    /* Quantum Shadows & Glows */
+    --shadow-void: 0 0 0 rgba(0, 0, 0, 1);
+    --shadow-neural: 0 8px 32px rgba(0, 0, 0, 0.8);
+    --shadow-quantum: 0 0 40px var(--holo-cyan),
+        0 0 80px var(--holo-electric),
+        0 0 120px var(--holo-violet);
+    --shadow-plasma: 0 0 30px var(--holo-plasma),
+        0 0 60px var(--holo-magenta);
+    --shadow-hologram: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.8);
+
+    --glow-quantum: 0 0 20px currentColor,
+        0 0 40px currentColor,
+        0 0 80px currentColor;
+    --glow-neural: 0 0 15px var(--holo-cyan);
+    --glow-plasma: 0 0 25px var(--holo-plasma);
+    --glow-consciousness: 0 0 50px var(--holo-violet);
+
+    /* Quantum Motion - Time Dilation */
+    --motion-instant: 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --motion-quantum: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --motion-neural: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --motion-consciousness: 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --motion-transcendent: 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --motion-infinity: 2s cubic-bezier(0.19, 1, 0.22, 1);
+
+    /* Quantum Dimensions */
+    --space-void: 0.25rem;
+    --space-neural: 0.75rem;
+    --space-synaptic: 1.25rem;
+    --space-quantum: 2rem;
+    --space-consciousness: 3.5rem;
+    --space-transcendent: 5rem;
+    --space-infinity: 8rem;
+
+    /* Holographic Borders */
+    --radius-neural: 8px;
+    --radius-quantum: 16px;
+    --radius-consciousness: 24px;
+    --radius-transcendent: 50px;
+    --radius-infinity: 100px;
+
+    /* Neural Typography */
+    --font-consciousness: 'Inter', system-ui, sans-serif;
+    --font-quantum: 'JetBrains Mono', 'Cascadia Code', monospace;
+    --font-neural: 'Inter', -apple-system, sans-serif;
+
+    /* Consciousness Scale */
+    --text-nano: 0.65rem;
+    --text-micro: 0.75rem;
+    --text-neural: 0.875rem;
+    --text-quantum: 1rem;
+    --text-synaptic: 1.125rem;
+    --text-conscious: 1.5rem;
+    --text-transcendent: 2.5rem;
+    --text-singularity: 4rem;
+    --text-infinity: 6rem;
 }
 
+/* Light Dimension */
 [data-theme="light"] {
-    --bg: #f6f8fb;
-    --panel: #ffffff;
-    --panel-2: #ffffff;
-    --text: #0d1320;
-    --muted: #445065;
-    --primary: #3b5bff;
-    --primary-600: #2545ff;
-    --border: #e7eaf0;
-    --shade: #f3f5f9;
-    --glass: rgba(0, 0, 0, .03);
-    --glow: 0 10px 30px rgba(59, 91, 255, .2);
+    --void-black: #ffffff;
+    --void-deep: #f8fafc;
+    --void-matrix: #f1f5f9;
+    --void-neural: #e2e8f0;
+    --void-synaptic: #cbd5e0;
+
+    --text-quantum: #1a1a1a;
+    --text-neural: #2d3748;
+    --text-synaptic: #4a5568;
+    --text-dormant: #718096;
+
+    --surface-void: rgba(255, 255, 255, 0.95);
+    --surface-neural: rgba(248, 250, 252, 0.9);
+    --surface-synaptic: rgba(241, 245, 249, 0.85);
+    --surface-conscious: rgba(226, 232, 240, 0.8);
 }
 
-* {
-    box-sizing: border-box
-}
-
-html,
-body {
-    height: 100%
-}
-
-body {
+/* === QUANTUM RESET & BASE === */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background:
-        radial-gradient(1200px 600px at 80% -10%, rgba(127, 88, 255, .18), transparent 60%),
-        radial-gradient(900px 500px at 10% -10%, rgba(64, 201, 255, .15), transparent 50%),
-        linear-gradient(180deg, var(--bg), #0a1220 60%, #070e1a);
-    color: var(--text);
-    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.5;
 }
 
-.accent {
-    position: fixed;
-    inset: -20% -20% auto -20%;
-    height: 40vh;
-    pointer-events: none;
-    filter: blur(40px);
-    background: radial-gradient(800px 300px at 20% 20%, rgba(64, 201, 255, .15), transparent 60%),
-        radial-gradient(800px 300px at 80% 0%, rgba(127, 88, 255, .2), transparent 60%);
-}
-
-.topbar {
-    position: sticky;
-    top: 0;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background: var(--glass);
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-    z-index: 10
-}
-
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 18px
-}
-
-.brand {
-    font-weight: 700;
-    letter-spacing: .3px
-}
-
-.topbar .btn.ghost {
-    background: transparent;
-    border-color: transparent
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 32px 20px;
-}
-
-.header {
-    margin-bottom: 18px
-}
-
-.header h1 {
-    margin: 0 0 6px 0;
-    font-size: 28px;
-    letter-spacing: 0.3px
-}
-
-.subtitle {
-    margin: 0;
-    color: var(--muted)
-}
-
-.card {
-    background: linear-gradient(180deg, var(--panel), var(--panel-2));
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 18px 18px 16px 18px;
-    box-shadow: var(--glow), 0 6px 22px rgba(0, 0, 0, .25);
+body {
+    font-family: var(--font-consciousness);
+    background: var(--void-black);
+    color: var(--text-quantum);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
     position: relative;
-    overflow: hidden;
+
+    /* Quantum Enhancement */
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
-.card::before {
-    content: "";
-    position: absolute;
+/* === QUANTUM REALITY BACKGROUND SYSTEM === */
+.neural-mesh {
+    position: fixed;
     inset: 0;
+    z-index: -3;
+    opacity: 0.6;
+
+    background-image:
+        /* Primary Neural Network */
+        radial-gradient(circle at 25% 25%, var(--holo-cyan) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, var(--holo-violet) 0%, transparent 50%),
+        radial-gradient(circle at 25% 75%, var(--holo-magenta) 0%, transparent 50%),
+        radial-gradient(circle at 75% 25%, var(--holo-electric) 0%, transparent 50%),
+
+        /* Secondary Neural Patterns */
+        radial-gradient(circle at 50% 50%, var(--holo-plasma) 0%, transparent 30%),
+
+        /* Neural Grid */
+        linear-gradient(0deg, transparent 24%, var(--consciousness-dormant) 25%, var(--consciousness-dormant) 26%, transparent 27%, transparent 74%, var(--consciousness-dormant) 75%, var(--consciousness-dormant) 76%, transparent 77%),
+        linear-gradient(90deg, transparent 24%, var(--consciousness-dormant) 25%, var(--consciousness-dormant) 26%, transparent 27%, transparent 74%, var(--consciousness-dormant) 75%, var(--consciousness-dormant) 76%, transparent 77%);
+
+    background-size: 800px 800px, 600px 600px, 400px 400px, 900px 900px, 300px 300px, 50px 50px, 50px 50px;
+    animation: neuralConsciousness 20s ease-in-out infinite;
+}
+
+.floating-particles {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
     pointer-events: none;
-    background: linear-gradient(135deg, rgba(123, 108, 255, .35), rgba(64, 201, 255, .25) 40%, transparent 60%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    padding: 1px;
-    border-radius: 16px;
+    opacity: 0.8;
 }
 
-.section {
-    margin-bottom: 18px
+.floating-particles::before,
+.floating-particles::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--holo-cyan);
+    border-radius: 50%;
+
+    box-shadow:
+        /* Quantum Particles */
+        0 0 6px var(--holo-cyan),
+        25px 35px 0 0 var(--holo-electric),
+        -30px -25px 0 0 var(--holo-violet),
+        45px -35px 0 0 var(--holo-magenta),
+        -40px 30px 0 0 var(--holo-crimson),
+        60px 15px 0 0 var(--holo-gold),
+        -50px -40px 0 0 var(--holo-lime),
+        35px 50px 0 0 var(--holo-plasma),
+
+        /* Neural Connections */
+        80px 0px 0 0 var(--holo-cyan),
+        -70px 20px 0 0 var(--holo-electric),
+        90px -30px 0 0 var(--holo-violet),
+        -85px -15px 0 0 var(--holo-magenta);
+
+    animation: quantumFloat 30s linear infinite;
 }
 
-.row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap
+.floating-particles::after {
+    animation-delay: -15s;
+    animation-duration: 35s;
+    box-shadow:
+        15px 25px 0 0 var(--holo-electric),
+        -35px -35px 0 0 var(--holo-violet),
+        40px -25px 0 0 var(--holo-magenta),
+        -45px 35px 0 0 var(--holo-crimson),
+        55px 5px 0 0 var(--holo-gold),
+        -60px -30px 0 0 var(--holo-lime);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px
+/* Quantum Neural Web Background */
+.quantum-web {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.3;
+
+    background-image:
+        linear-gradient(45deg, transparent 40%, var(--consciousness-dormant) 50%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, var(--consciousness-aware) 50%, transparent 60%);
+    background-size: 200px 200px, 200px 200px;
+    animation: quantumPulse 15s ease-in-out infinite;
 }
 
-@media (min-width: 900px) {
-    .grid {
-        grid-template-columns: 1fr 1fr
+@keyframes neuralConsciousness {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+
+    25% {
+        opacity: 0.7;
+        transform: scale(1.05) rotate(90deg);
+        filter: hue-rotate(90deg);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1) rotate(180deg);
+        filter: hue-rotate(180deg);
+    }
+
+    75% {
+        opacity: 0.8;
+        transform: scale(1.05) rotate(270deg);
+        filter: hue-rotate(270deg);
     }
 }
 
-label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px
+@keyframes quantumFloat {
+    0% {
+        transform: translateY(100vh) translateX(-50px) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(50px) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
 }
 
-.small {
-    color: var(--muted);
-    font-size: 0.92rem
+@keyframes quantumPulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.1);
+        filter: brightness(1.5);
+    }
 }
 
-input[type="text"],
-input[type="file"],
-textarea {
-    width: 100%;
-    color: var(--text);
-    background: var(--shade);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 12px 14px;
-    outline: none;
-    transition: border-color .15s ease, background-color .15s ease, box-shadow .2s ease;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-    border-color: var(--primary);
-    /* fallback */
-    box-shadow: 0 0 0 3px rgba(123, 108, 255, .25);
-    /* enhanced */
-    box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 25%, transparent 75%);
-}
-
-textarea {
-    min-height: 200px;
-    resize: vertical;
-}
-
-.actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px
-}
-
-.btn {
-    appearance: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 12px;
-    padding: 10px 14px;
-    background: #1a2440;
-    color: var(--text);
-    border: 1px solid var(--border);
-    transition: all .15s ease-in-out;
-}
-
-.btn:hover {
-    transform: translateY(-1px);
-    background: #1c2747
-}
-
-.btn:active {
-    transform: translateY(0)
-}
-
-.btn.primary {
-    background: linear-gradient(180deg, var(--primary), var(--primary-600));
-    border-color: transparent;
-    box-shadow: var(--glow)
-}
-
-.btn.primary:hover {
-    filter: brightness(1.05)
-}
-
-.btn.primary {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn.primary::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .25), transparent);
-    transform: translateX(-120%);
-}
-
-.btn.primary:hover::after {
-    transition: transform .6s ease;
-    transform: translateX(120%);
-}
-
-.btn:focus-visible {
-    outline: none;
-    /* fallback */
-    box-shadow: 0 0 0 3px rgba(123, 108, 255, .25);
-    /* enhanced */
-    box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 25%, transparent 75%);
-}
-
-.btn.ghost {
-    background: transparent;
-    border-color: transparent;
-}
-
-.footer {
-    margin-top: 22px;
-    text-align: center;
-    opacity: .9
-}
-
-/* Utility classes to replace inline styles */
-.mt-075 {
-    margin-top: .75rem;
-}
-
-.mt-05 {
-    margin-top: .5rem;
-}
-
-/* Dropzone */
-.dropzone {
-    position: relative;
-    border: 1px dashed var(--border);
-    border-radius: 16px;
-    padding: 16px;
-    background: var(--glass)
-}
-
-.dropzone-inner {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap
-}
-
-.dropzone svg {
-    color: var(--primary)
-}
-
-.dropzone.dragging {
-    border-color: var(--primary);
-    /* fallback */
-    background: var(--glass);
-    /* enhanced */
-    background: color-mix(in oklab, var(--primary) 8%, var(--glass));
-}
-
-.dz-title {
-    font-weight: 600
-}
-
-.dz-actions {
-    display: flex;
-    gap: 10px;
-    align-items: center
-}
-
-.or {
-    text-align: center;
-    color: var(--muted);
-    margin: 12px 0
-}
-
-/* Busy overlay */
-.busy {
+/* === QUANTUM COMMAND INTERFACE === */
+.command-bar {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: var(--surface-neural);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border-bottom: 1px solid var(--consciousness-aware);
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-quantum);
+
+    /* Holographic Border */
+    position: relative;
+}
+
+.command-bar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-consciousness);
+    opacity: 0.8;
+    animation: quantumScan 3s ease-in-out infinite;
+}
+
+.command-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-neural-web);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+@keyframes quantumScan {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scaleX(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: var(--space-synaptic);
+}
+
+.brand-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-consciousness);
+    border-radius: var(--radius-consciousness);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    background: rgba(0, 0, 0, .25);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    color: #fff;
-    font-weight: 600;
-    z-index: 100
+    color: white;
+    font-size: 24px;
+    box-shadow: var(--shadow-quantum);
+    position: relative;
+    overflow: hidden;
+
+    animation: brandConsciousness 4s ease-in-out infinite;
 }
 
-.busy.hidden {
-    display: none
+.brand-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-holographic);
+    border-radius: var(--radius-consciousness);
+    z-index: -1;
+    animation: holographicRotation 8s linear infinite;
 }
 
-.spinner {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, .3);
-    border-top-color: #fff;
-    animation: spin .8s linear infinite
+.brand-icon::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--surface-neural);
+    border-radius: var(--radius-consciousness);
+    z-index: -1;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg)
-    }
+.brand-text {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Selection */
-::selection {
-    /* fallback */
-    background: rgba(123, 108, 255, .3);
-    /* enhanced */
-    background: color-mix(in oklab, var(--primary) 30%, transparent);
-}
-
-/* Gradient headline + accent text */
-.gradient-text {
-    /* fallback */
-    color: var(--text);
-    /* enhanced */
-    background: linear-gradient(90deg, var(--text), color-mix(in oklab, var(--primary) 60%, var(--text)) 80%);
+.brand-name {
+    font-size: var(--text-conscious);
+    font-weight: 900;
+    background: var(--gradient-consciousness);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+
+    animation: textConsciousness 3s ease-in-out infinite;
 }
 
-.accent-text {
-    /* fallback */
-    color: var(--primary);
-    /* enhanced: color-mix(in oklab, var(--primary) 85%, var(--text)) */
+.brand-subtitle {
+    font-size: var(--text-micro);
+    color: var(--text-synaptic);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0.8;
 }
 
-/* Reveal animation */
-.reveal {
+.command-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-neural);
+}
+
+.cmd-btn {
+    width: 45px;
+    height: 45px;
+    background: var(--surface-glass);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-quantum);
+    color: var(--text-synaptic);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--motion-quantum);
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cmd-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-consciousness);
     opacity: 0;
-    transform: translateY(8px);
-    transition: opacity .6s ease, transform .6s ease;
+    transition: all var(--motion-quantum);
 }
 
-.reveal.visible {
+.cmd-btn:hover {
+    background: var(--consciousness-aware);
+    border-color: var(--holo-cyan);
+    color: var(--holo-cyan);
+    box-shadow: var(--glow-quantum);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.cmd-btn:hover::before {
+    opacity: 0.1;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-neural);
+    font-size: var(--text-neural);
+    color: var(--text-synaptic);
+    padding: var(--space-neural) var(--space-synaptic);
+    background: var(--surface-glass);
+    border-radius: var(--radius-transcendent);
+    border: 1px solid var(--consciousness-dormant);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--holo-lime);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--holo-lime);
+    animation: consciousnessPulse 2s ease-in-out infinite;
+}
+
+@keyframes brandConsciousness {
+
+    0%,
+    100% {
+        box-shadow: var(--shadow-quantum);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: var(--shadow-quantum), var(--glow-consciousness);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes holographicRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes textConsciousness {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes consciousnessPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* === QUANTUM WORKSPACE === */
+.workspace {
+    padding-top: 100px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: var(--space-quantum);
+    padding-right: var(--space-quantum);
+    position: relative;
+    min-height: 100vh;
+}
+
+/* === CONSCIOUSNESS HERO === */
+.hero-section {
+    text-align: center;
+    padding: var(--space-consciousness) 0;
+    margin-bottom: var(--space-transcendent);
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 200px;
+    background: var(--gradient-plasma-field);
+    opacity: 0.3;
+    border-radius: var(--radius-infinity);
+    filter: blur(40px);
+    animation: plasmaField 6s ease-in-out infinite;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(var(--text-transcendent), 7vw, var(--text-infinity));
+    font-weight: 900;
+    line-height: 0.95;
+    margin-bottom: var(--space-transcendent);
+    perspective: 1000px;
+}
+
+.title-primary {
+    display: block;
+    color: var(--text-quantum);
+    opacity: 0.9;
+    animation: titleReveal 1s ease-out forwards;
+}
+
+.title-highlight {
+    display: block;
+    background: var(--gradient-consciousness);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    animation: titleReveal 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 4px;
+    background: var(--gradient-consciousness);
+    border-radius: 2px;
+    opacity: 0.7;
+    animation: underlineGlow 2s ease-in-out infinite;
+}
+
+.hero-description {
+    font-size: var(--text-conscious);
+    color: var(--text-neural);
+    margin-bottom: var(--space-transcendent);
+    line-height: 1.6;
+    font-weight: 300;
+    opacity: 0;
+    animation: titleReveal 1s ease-out 0.6s forwards;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-transcendent);
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: titleReveal 1s ease-out 0.9s forwards;
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--space-synaptic);
+    background: var(--surface-glass);
+    border-radius: var(--radius-quantum);
+    border: 1px solid var(--consciousness-dormant);
+    backdrop-filter: blur(10px);
+    transition: all var(--motion-quantum);
+}
+
+.stat-item:hover {
+    border-color: var(--holo-cyan);
+    box-shadow: var(--glow-neural);
+    transform: translateY(-4px);
+}
+
+.stat-number {
+    font-size: var(--text-transcendent);
+    font-weight: 900;
+    color: var(--holo-cyan);
+    display: block;
+    line-height: 1;
+    animation: numberCount 2s ease-out 1.2s forwards;
+}
+
+.stat-label {
+    font-size: var(--text-neural);
+    color: var(--text-synaptic);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-top: var(--space-void);
+}
+
+@keyframes plasmaField {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1.1) rotate(180deg);
+    }
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotateX(20deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+@keyframes underlineGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        box-shadow: 0 0 10px currentColor;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px currentColor;
+    }
+}
+
+@keyframes numberCount {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* === QUANTUM SECTIONS === */
+.section-header {
+    margin-bottom: var(--space-transcendent);
+    position: relative;
+}
+
+.section-title {
+    font-size: var(--text-transcendent);
+    font-weight: 800;
+    color: var(--text-quantum);
+    display: flex;
+    align-items: center;
+    gap: var(--space-synaptic);
+    margin-bottom: var(--space-neural);
+    position: relative;
+}
+
+.section-title .material-symbols-outlined {
+    font-size: 32px;
+    color: var(--holo-cyan);
+    animation: iconGlow 3s ease-in-out infinite;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: var(--gradient-consciousness);
+    border-radius: 1px;
+}
+
+.section-subtitle {
+    font-size: var(--text-synaptic);
+    color: var(--text-synaptic);
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+@keyframes iconGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px currentColor;
+        transform: scale(1);
+    }
+
+    50% {
+        text-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+        transform: scale(1.1);
+    }
+}
+
+/* === QUANTUM UPLOAD INTERFACE === */
+.upload-section {
+    margin-bottom: var(--space-quantum);
+}
+
+.upload-container {
+    background: var(--surface-neural);
+    border: 1px solid var(--consciousness-aware);
+    border-radius: var(--radius-consciousness);
+    padding: var(--space-transcendent);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-consciousness);
+    opacity: 0.8;
+}
+
+.upload-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-neural-web);
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.upload-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-transcendent);
+    margin-bottom: var(--space-transcendent);
+    position: relative;
+    z-index: 2;
+}
+
+/* Quantum Dropzone */
+.smart-dropzone {
+    position: relative;
+    min-height: 250px;
+    border: 2px dashed var(--consciousness-dormant);
+    border-radius: var(--radius-consciousness);
+    background: var(--surface-glass);
+    cursor: pointer;
+    transition: all var(--motion-consciousness);
+    overflow: hidden;
+}
+
+.smart-dropzone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-quantum-tunnel);
+    opacity: 0;
+    transition: all var(--motion-consciousness);
+}
+
+.smart-dropzone:hover {
+    border-color: var(--holo-cyan);
+    background: var(--consciousness-aware);
+    box-shadow: var(--glow-quantum);
+    transform: scale(1.02);
+}
+
+.smart-dropzone:hover::before {
+    opacity: 0.3;
+}
+
+.smart-dropzone.dragover {
+    border-color: var(--holo-plasma);
+    background: var(--consciousness-active);
+    box-shadow: var(--glow-plasma);
+    transform: scale(1.05);
+}
+
+.smart-dropzone.dragover::before {
+    opacity: 0.5;
+    animation: quantumPulse 1s ease-in-out infinite;
+}
+
+.dropzone-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    overflow: hidden;
+}
+
+.dropzone-pattern {
+    position: absolute;
+    inset: -100%;
+    background-image:
+        repeating-conic-gradient(from 0deg at 50% 50%,
+            transparent 0deg,
+            var(--holo-cyan) 10deg,
+            transparent 20deg);
+    animation: patternRotation 30s linear infinite;
+}
+
+.dropzone-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-transcendent);
+    text-align: center;
+    z-index: 3;
+}
+
+.dropzone-icon {
+    font-size: 64px;
+    color: var(--holo-cyan);
+    margin-bottom: var(--space-synaptic);
+    animation: iconFloat 4s ease-in-out infinite;
+}
+
+.dropzone-primary {
+    font-size: var(--text-conscious);
+    font-weight: 700;
+    color: var(--text-quantum);
+    margin-bottom: var(--space-neural);
+}
+
+.dropzone-secondary {
+    font-size: var(--text-neural);
+    color: var(--text-synaptic);
+    opacity: 0.8;
+}
+
+@keyframes patternRotation {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+        filter: drop-shadow(0 0 10px currentColor);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.1);
+        filter: drop-shadow(0 0 20px currentColor);
+    }
+}
+
+/* Quantum Text Input */
+.text-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-synaptic);
+    position: relative;
+}
+
+.input-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-neural);
+    font-size: var(--text-neural);
+    font-weight: 600;
+    color: var(--text-neural);
+}
+
+.input-header .material-symbols-outlined {
+    font-size: 20px;
+    color: var(--holo-violet);
+    animation: iconGlow 3s ease-in-out infinite;
+}
+
+.smart-textarea {
+    position: relative;
+    background: var(--surface-synaptic);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-consciousness);
+    overflow: hidden;
+}
+
+.smart-textarea::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-neural-web);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.smart-textarea textarea {
+    width: 100%;
+    min-height: 200px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: var(--space-synaptic);
+    color: var(--text-quantum);
+    font-family: var(--font-quantum);
+    font-size: var(--text-neural);
+    line-height: 1.7;
+    resize: vertical;
+    position: relative;
+    z-index: 2;
+}
+
+.smart-textarea textarea::placeholder {
+    color: var(--text-synaptic);
+    opacity: 0.6;
+}
+
+.smart-textarea textarea:focus {
+    box-shadow: inset 0 0 20px var(--consciousness-aware);
+}
+
+.textarea-tools {
+    position: absolute;
+    top: var(--space-neural);
+    right: var(--space-neural);
+    display: flex;
+    align-items: center;
+    gap: var(--space-neural);
+    z-index: 3;
+}
+
+.tool-btn {
+    width: 32px;
+    height: 32px;
+    background: var(--surface-glass);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-neural);
+    color: var(--text-synaptic);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all var(--motion-quantum);
+}
+
+.tool-btn:hover {
+    background: var(--consciousness-aware);
+    color: var(--holo-cyan);
+    border-color: var(--holo-cyan);
+    box-shadow: var(--glow-neural);
+}
+
+.word-count {
+    font-size: var(--text-nano);
+    color: var(--text-synaptic);
+    background: var(--surface-glass);
+    padding: var(--space-void) var(--space-neural);
+    border-radius: var(--radius-neural);
+    border: 1px solid var(--consciousness-dormant);
+    font-family: var(--font-quantum);
+}
+
+/* Quantum Upload Actions */
+.upload-actions {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-neural);
+    padding: var(--space-synaptic) var(--space-transcendent);
+    background: var(--surface-glass);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-transcendent);
+    color: var(--text-quantum);
+    font-size: var(--text-synaptic);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--motion-consciousness);
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn.primary {
+    background: var(--gradient-consciousness);
+    border-color: transparent;
+    color: white;
+    box-shadow: var(--shadow-quantum);
+}
+
+.action-btn.primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 70%);
+    transform: translateX(-100%);
+    transition: transform var(--motion-transcendent);
+}
+
+.action-btn.primary:hover::before {
+    transform: translateX(100%);
+}
+
+.action-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--shadow-quantum);
+}
+
+.action-btn.primary:hover {
+    box-shadow: var(--shadow-quantum), var(--glow-consciousness);
+}
+
+.action-btn .material-symbols-outlined {
+    font-size: 22px;
+    animation: iconGlow 3s ease-in-out infinite;
+}
+
+/* === QUANTUM DISTRIBUTION SYSTEM === */
+.distribution-container {
+    margin-top: var(--space-transcendent);
+    background: var(--surface-neural);
+    border: 1px solid var(--consciousness-aware);
+    border-radius: var(--radius-consciousness);
+    overflow: hidden;
+    position: relative;
+}
+
+.distribution-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-consciousness);
+    animation: quantumPulse 2s ease-in-out infinite;
+}
+
+.share-methods {
+    padding: var(--space-transcendent);
+}
+
+/* Quantum Email Distribution */
+.share-method {
+    background: var(--surface-synaptic);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-transcendent);
+    padding: var(--space-quantum);
+    margin-bottom: var(--space-quantum);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--motion-consciousness);
+}
+
+.share-method::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--consciousness-aware) 50%,
+            transparent 100%);
+    transition: left var(--motion-consciousness);
+    pointer-events: none;
+}
+
+.share-method:hover::before {
+    left: 100%;
+}
+
+.share-method:hover {
+    border-color: var(--holo-cyan);
+    box-shadow: var(--glow-neural);
+    transform: translateY(-2px);
+}
+
+.share-method .method-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-consciousness);
+    border-radius: var(--radius-consciousness);
+    margin-bottom: var(--space-synaptic);
+    position: relative;
+    overflow: hidden;
+}
+
+.share-method .method-icon::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--surface-synaptic);
+    border-radius: calc(var(--radius-consciousness) - 2px);
+}
+
+.share-method .method-icon .material-symbols-outlined {
+    font-size: 24px;
+    color: var(--holo-cyan);
+    position: relative;
+    z-index: 1;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.method-content {
+    flex: 1;
+}
+
+.method-title {
+    font-size: var(--text-conscious);
+    font-weight: 700;
+    color: var(--text-quantum);
+    margin-bottom: var(--space-neural);
+}
+
+.method-description {
+    font-size: var(--text-synaptic);
+    color: var(--text-synaptic);
+    margin-bottom: var(--space-synaptic);
+    opacity: 0.8;
+}
+
+/* Quantum Email Input System */
+.email-input {
+    display: flex;
+    gap: var(--space-synaptic);
+    align-items: stretch;
+    margin-top: var(--space-synaptic);
+}
+
+.email-input input {
+    flex: 1;
+    background: var(--surface-conscious);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-quantum);
+    padding: var(--space-synaptic) var(--space-quantum);
+    color: var(--text-quantum);
+    font-size: var(--text-synaptic);
+    transition: all var(--motion-consciousness);
+    position: relative;
+}
+
+.email-input input::placeholder {
+    color: var(--text-dormant);
+    opacity: 0.6;
+}
+
+.email-input input:focus {
+    border-color: var(--holo-cyan);
+    box-shadow: 0 0 0 3px var(--consciousness-aware), var(--glow-neural);
+    transform: scale(1.02);
+}
+
+.email-input input:focus::placeholder {
+    opacity: 0.3;
+    transform: translateY(-2px);
+}
+
+/* Quantum Export Grid */
+.export-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-synaptic);
+    margin-top: var(--space-quantum);
+}
+
+.export-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-neural);
+    padding: var(--space-synaptic);
+    background: var(--surface-conscious);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-transcendent);
+    color: var(--text-neural);
+    font-size: var(--text-neural);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--motion-consciousness);
+    position: relative;
+    overflow: hidden;
+}
+
+.export-option::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-consciousness);
+    opacity: 0;
+    transition: opacity var(--motion-consciousness);
+}
+
+.export-option::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--surface-conscious);
+    border-radius: calc(var(--radius-transcendent) - 1px);
+    transition: background var(--motion-consciousness);
+}
+
+.export-option .material-symbols-outlined,
+.export-option span {
+    position: relative;
+    z-index: 1;
+}
+
+.export-option:hover::before {
+    opacity: 1;
+}
+
+.export-option:hover::after {
+    background: var(--surface-neural);
+}
+
+.export-option:hover {
+    border-color: transparent;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--glow-plasma);
+    color: var(--text-quantum);
+}
+
+.export-option .material-symbols-outlined {
+    font-size: 28px;
+    color: var(--holo-electric);
+    animation: iconGlow 2.5s ease-in-out infinite;
+}
+
+.export-option:hover .material-symbols-outlined {
+    animation: iconBounce 0.6s ease-in-out;
+    color: var(--holo-cyan);
+}
+
+.share-status {
+    padding: var(--space-synaptic) var(--space-transcendent);
+    text-align: center;
+    font-size: var(--text-neural);
+    color: var(--text-synaptic);
+    border-top: 1px solid var(--consciousness-dormant);
+    background: var(--surface-void);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === QUANTUM AI ASSISTANT === */
+.ai-assistant {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 320px;
+    background: var(--surface-neural);
+    border: 1px solid var(--consciousness-aware);
+    border-radius: var(--radius-consciousness);
+    box-shadow: var(--shadow-quantum);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    transform: translateY(100%) scale(0.8);
+    opacity: 0;
+    transition: all var(--motion-consciousness);
+}
+
+.ai-assistant.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.ai-assistant::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-consciousness);
+    border-radius: calc(var(--radius-consciousness) + 2px);
+    z-index: -1;
+    animation: quantumPulse 3s ease-in-out infinite;
+}
+
+.assistant-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-synaptic);
+    padding: var(--space-synaptic);
+    border-bottom: 1px solid var(--consciousness-dormant);
+    background: var(--surface-synaptic);
+}
+
+.assistant-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-consciousness);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.assistant-avatar::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--surface-synaptic);
+    border-radius: 50%;
+}
+
+.assistant-avatar .material-symbols-outlined {
+    font-size: 20px;
+    color: var(--holo-cyan);
+    position: relative;
+    z-index: 1;
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+.assistant-info {
+    flex: 1;
+}
+
+.assistant-name {
+    font-size: var(--text-synaptic);
+    font-weight: 700;
+    color: var(--text-quantum);
+}
+
+.assistant-status {
+    font-size: var(--text-neural);
+    color: var(--text-synaptic);
+    opacity: 0.8;
+}
+
+.close-btn {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-synaptic);
+    cursor: pointer;
+    transition: all var(--motion-consciousness);
+}
+
+.close-btn:hover {
+    background: var(--consciousness-aware);
+    border-color: var(--holo-cyan);
+    color: var(--text-quantum);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.assistant-content {
+    padding: var(--space-synaptic);
+}
+
+.suggestion-chips {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-neural);
+}
+
+.suggestion-chip {
+    background: var(--surface-conscious);
+    border: 1px solid var(--consciousness-dormant);
+    border-radius: var(--radius-quantum);
+    padding: var(--space-neural) var(--space-synaptic);
+    color: var(--text-neural);
+    font-size: var(--text-neural);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--motion-consciousness);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.suggestion-chip::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--consciousness-aware) 50%,
+            transparent 100%);
+    transition: left var(--motion-consciousness);
+}
+
+.suggestion-chip:hover::before {
+    left: 100%;
+}
+
+.suggestion-chip:hover {
+    border-color: var(--holo-electric);
+    color: var(--text-quantum);
+    transform: translateX(4px);
+    box-shadow: var(--glow-neural);
+}
+
+/* === QUANTUM PROCESSING WORKSPACE === */
+.processing-section {
+    margin-bottom: var(--space-transcendent);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all var(--motion-transcendent);
+}
+
+.processing-section.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Textarea specializations */
-#transcript {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: .95rem;
-    line-height: 1.45;
+.workspace-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-transcendent);
 }
 
-#summary {
-    line-height: 1.55;
+/* Quantum Panel System */
+.panel {
+    background: var(--surface-neural);
+    border: 1px solid var(--consciousness-aware);
+    border-radius: var(--radius-consciousness);
+    overflow: hidden;
+    position: relative;
+    transition: all var(--motion-consciousness);
 }
 
-input::placeholder,
-textarea::placeholder {
-    /* fallback */
-    color: var(--muted);
-    /* enhanced */
-    /* fallback */
-    color: var(--muted);
-    /* enhanced: color-mix(in oklab, var(--muted) 85%, transparent) */
+.panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-consciousness);
+    opacity: 0;
+    transition: opacity var(--motion-consciousness);
 }
 
-@media (min-width: 900px) {
-    .header h1 {
-        font-size: 40px;
+.panel:hover::before {
+    opacity: 1;
+}
+
+.panel:hover {
+    box-shadow: var(--shadow-quantum);
+    transform: translateY(-4px);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-synaptic) var(--space-transcendent);
+    border-bottom: 1px solid var(--consciousness-dormant);
+    background: var(--surface-synaptic);
+}
+
+.panel-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-neural);
+    font-size: var(--text-conscious);
+    font-weight: 700;
+    color: var(--text-quantum);
+}
+
+.panel-title .material-symbols-outlined {
+    font-size: 24px;
+    color: var(--holo-cyan);
+    animation: iconGlow 3s ease-in-out infinite;
+}
+
+.panel-content {
+    padding: var(--space-transcendent);
+    position: relative;
+}
+
+.panel-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-neural-web);
+    opacity: 0.02;
+    pointer-events: none;
+}
+
+/* === QUANTUM RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+    .workspace-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-quantum);
+    }
+
+    .upload-methods {
+        grid-template-columns: 1fr;
     }
 }
 
-/* Toast notification */
-.toast {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 200;
-    background: linear-gradient(180deg, var(--panel), var(--panel-2));
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 10px 14px;
-    box-shadow: var(--glow), 0 6px 22px rgba(0, 0, 0, .25);
-    opacity: 0;
-    transform: translateY(8px);
-    animation: toast-in .25s ease forwards;
+@media (max-width: 768px) {
+    .command-bar {
+        padding: 0 var(--space-synaptic);
+        height: 70px;
+    }
+
+    .workspace {
+        padding-left: var(--space-synaptic);
+        padding-right: var(--space-synaptic);
+        padding-top: 90px;
+    }
+
+    .hero-stats {
+        gap: var(--space-quantum);
+        flex-direction: column;
+    }
+
+    .brand-section {
+        gap: var(--space-neural);
+    }
+
+    .brand-name {
+        font-size: var(--text-conscious);
+    }
+
+    .hero-title {
+        margin-bottom: var(--space-quantum);
+    }
+
+    .hero-description {
+        font-size: var(--text-synaptic);
+        margin-bottom: var(--space-quantum);
+    }
+
+    .upload-container {
+        padding: var(--space-quantum);
+    }
 }
 
-@keyframes toast-in {
-    to {
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--text-transcendent);
+    }
+
+    .hero-description {
+        font-size: var(--text-synaptic);
+    }
+
+    .command-actions {
+        gap: var(--space-neural);
+    }
+
+    .cmd-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .brand-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+}
+
+/* === QUANTUM UTILITIES === */
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    opacity: 0 !important;
+}
+
+.quantum-glow {
+    box-shadow: var(--glow-quantum);
+}
+
+.neural-glow {
+    box-shadow: var(--glow-neural);
+}
+
+.plasma-glow {
+    box-shadow: var(--glow-plasma);
+}
+
+/* Focus Enhancement */
+*:focus-visible {
+    outline: 2px solid var(--holo-cyan);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--consciousness-aware);
+}
+
+/* Selection Enhancement */
+::selection {
+    background: var(--holo-cyan);
+    color: var(--void-black);
+    text-shadow: none;
+}
+
+/* Scrollbar Enhancement */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface-neural);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-consciousness);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--holo-cyan);
+    box-shadow: 0 0 10px var(--holo-cyan);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* === QUANTUM CONSCIOUSNESS KEYFRAMES - ENHANCED UI ANIMATIONS === */
+@keyframes iconGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 5px currentColor;
+        filter: brightness(1);
+    }
+
+    50% {
+        text-shadow: 0 0 20px currentColor,
+            0 0 30px currentColor,
+            0 0 40px currentColor;
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-4px) rotate(5deg);
+    }
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3) rotate(10deg);
+    }
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
         opacity: 1;
-        transform: translateY(0);
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes neuralWave {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes holographicShimmer {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: 200px 0;
+    }
+}
+
+@keyframes consciousnessExpansion {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
     }
 }

@@ -4,116 +4,359 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meeting Summarizer</title>
+    <title>Nexus AI - Meeting Intelligence</title>
+    <meta name="description" content="Transform meetings into actionable insights with AI-powered summarization" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <meta name="theme-color" content="#0d1524" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+    <meta name="theme-color" content="#0B0F18" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 </head>
 
 <body>
-    <div class="accent"></div>
-    <nav class="topbar">
-        <div class="brand">AI Meeting Summarizer</div>
-        <div class="topbar-actions">
-            <button class="btn ghost" id="themeToggle" title="Toggle theme">Theme</button>
+    <!-- Quantum Reality Engine -->
+    <div class="neural-mesh"></div>
+    <div class="floating-particles"></div>
+    <div class="quantum-web"></div>
+
+    <!-- Command bar -->
+    <nav class="command-bar">
+        <div class="brand-section">
+            <div class="brand-icon">
+                <span class="material-symbols-outlined">psychology</span>
+            </div>
+            <div class="brand-text">
+                <div class="brand-name">Nexus AI</div>
+                <div class="brand-subtitle">Meeting Intelligence</div>
+            </div>
+        </div>
+        <div class="command-actions">
+            <button class="cmd-btn" id="aiAssistant" title="AI Assistant">
+                <span class="material-symbols-outlined">smart_toy</span>
+            </button>
+            <button class="cmd-btn" id="themeToggle" title="Toggle theme">
+                <span class="material-symbols-outlined">contrast</span>
+            </button>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Ready</span>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
-        <header class="header reveal">
-            <h1 class="gradient-text">Turn meetings into crisp summaries</h1>
-            <p class="subtitle">Upload a transcript, generate an <span class="accent-text">AI</span> summary, edit it,
-                and share by email.</p>
-        </header>
-
-        <div class="section card reveal">
-            <label>Upload transcript (.txt or .md) or paste text</label>
-            <div id="dropzone" class="dropzone" aria-label="Drop transcript file here">
-                <div class="dropzone-inner">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true">
-                        <path d="M12 3v14m0-14l-4 4m4-4l4 4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <div>
-                        <div class="dz-title">Drag & drop your transcript</div>
-                        <div class="small">or</div>
+    <!-- Main interface -->
+    <main class="workspace">
+        <!-- Quantum Hero Interface -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-primary">Quantum consciousness meets</span>
+                    <span class="title-highlight">neural intelligence</span>
+                </h1>
+                <p class="hero-description">
+                    Experience the future of meeting intelligence with quantum-powered AI that understands context,
+                    emotion, and intent at the speed of thought.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">∞.∞%</div>
+                        <div class="stat-label">Quantum Accuracy</div>
                     </div>
-                    <div class="dz-actions">
-                        <input id="file" type="file" accept=".txt,.md" title="Upload transcript file" />
-                        <button class="btn" id="browseBtn" type="button">Browse</button>
-                        <button class="btn primary" id="uploadBtn" type="button">Upload</button>
+                    <div class="stat-item">
+                        <div class="stat-number">~0s</div>
+                        <div class="stat-label">Neural Processing</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∀</div>
+                        <div class="stat-label">Universal Languages</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∑∞</div>
+                        <div class="stat-label">Consciousness States</div>
                     </div>
                 </div>
             </div>
-            <div class="or">— or paste below —</div>
-            <textarea id="rawText" placeholder="Paste transcript text here..."></textarea>
-            <div class="actions">
-                <button class="btn" id="uploadTextBtn">Upload Text</button>
-                <span id="uploadStatus" class="small"></span>
+        </section>
+
+        <!-- Quantum Data Input Interface -->
+        <section class="upload-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="material-symbols-outlined">cloud_sync</span>
+                    Quantum Data Sync
+                </h2>
+                <div class="section-subtitle">Channel your consciousness into the neural matrix</div>
+            </div>
+
+            <div class="upload-container">
+                <div class="upload-methods">
+                    <!-- Quantum Dropzone -->
+                    <div id="smartDropzone" class="smart-dropzone">
+                        <div class="dropzone-bg">
+                            <div class="dropzone-pattern"></div>
+                        </div>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon">
+                                <span class="material-symbols-outlined">neurology</span>
+                            </div>
+                            <div class="dropzone-text">
+                                <div class="dropzone-primary">Neural Upload Portal</div>
+                                <div class="dropzone-secondary">Quantum sync • Infinite bandwidth • All formats</div>
+                            </div>
+                            <input id="file" type="file" accept=".txt,.md,.docx" hidden />
+                        </div>
+                        <div class="dropzone-progress" id="uploadProgress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Consciousness Direct Input -->
+                    <div class="text-input-container">
+                        <div class="input-header">
+                            <span class="material-symbols-outlined">psychology</span>
+                            <span>Consciousness Stream</span>
+                        </div>
+                        <div class="smart-textarea">
+                            <textarea id="rawText"
+                                placeholder="Stream your meeting consciousness directly into the quantum field..."></textarea>
+                            <div class="textarea-tools">
+                                <button class="tool-btn" id="clearText" title="Purge neural cache">
+                                    <span class="material-symbols-outlined">neurology_off</span>
+                                </button>
+                                <div class="word-count">0 neural pathways</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-actions">
+                    <button class="action-btn primary" id="processInput">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        Initiate Quantum Analysis
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Processing workspace -->
+        <section class="processing-section" id="processingWorkspace">
+            <div class="workspace-grid">
+                <!-- Source panel -->
+                <div class="panel source-panel">
+                    <div class="panel-header">
+                        <div class="panel-title">
+                            <span class="material-symbols-outlined">description</span>
+                            Source Transcript
+                        </div>
+                        <div class="panel-actions">
+                            <button class="panel-btn" id="expandSource" title="Expand">
+                                <span class="material-symbols-outlined">open_in_full</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="transcript-viewer">
+                            <textarea id="transcript" readonly
+                                placeholder="Your transcript will appear here after processing..."></textarea>
+                            <div class="transcript-meta">
+                                <div class="meta-item">
+                                    <span class="material-symbols-outlined">schedule</span>
+                                    <span id="transcriptDuration">--</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="material-symbols-outlined">text_fields</span>
+                                    <span id="transcriptWords">0 words</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intelligence panel -->
+                <div class="panel intelligence-panel">
+                    <div class="panel-header">
+                        <div class="panel-title">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            AI Intelligence
+                        </div>
+                        <div class="panel-actions">
+                            <button class="panel-btn" id="customizePrompt" title="Customize prompt">
+                                <span class="material-symbols-outlined">tune</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <!-- Prompt interface -->
+                        <div class="prompt-section">
+                            <div class="prompt-presets">
+                                <button class="preset-chip active" data-preset="executive">Executive Summary</button>
+                                <button class="preset-chip" data-preset="detailed">Detailed Analysis</button>
+                                <button class="preset-chip" data-preset="action">Action Items</button>
+                                <button class="preset-chip" data-preset="custom">Custom</button>
+                            </div>
+                            <div class="custom-prompt" id="customPromptSection">
+                                <textarea id="prompt"
+                                    placeholder="Describe how you want the AI to analyze this meeting..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Generation controls -->
+                        <div class="generation-controls">
+                            <button class="action-btn primary" id="generateSummary">
+                                <span class="material-symbols-outlined">psychology</span>
+                                Generate Intelligence
+                            </button>
+                            <div class="generation-options">
+                                <label class="option-toggle">
+                                    <input type="checkbox" id="includeTimestamps" checked>
+                                    <span>Include timestamps</span>
+                                </label>
+                                <label class="option-toggle">
+                                    <input type="checkbox" id="extractActions" checked>
+                                    <span>Extract action items</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Summary editor -->
+                        <div class="summary-section">
+                            <div class="editor-header">
+                                <span class="material-symbols-outlined">edit</span>
+                                <span>Intelligent Summary</span>
+                                <div class="editor-tools">
+                                    <button class="tool-btn" id="regenerate" title="Regenerate">
+                                        <span class="material-symbols-outlined">refresh</span>
+                                    </button>
+                                    <button class="tool-btn" id="copySummary" title="Copy to clipboard">
+                                        <span class="material-symbols-outlined">content_copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="smart-editor">
+                                <textarea id="summary"
+                                    placeholder="AI-generated insights will appear here..."></textarea>
+                                <div class="editor-footer">
+                                    <div class="summary-stats">
+                                        <span id="summaryWords">0 words</span>
+                                        <span>•</span>
+                                        <span id="summaryReadTime">0 min read</span>
+                                    </div>
+                                    <button class="action-btn secondary" id="saveEdits">
+                                        <span class="material-symbols-outlined">save</span>
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Distribution section -->
+        <section class="distribution-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="material-symbols-outlined">share</span>
+                    Distribute Insights
+                </h2>
+                <div class="section-subtitle">Share your intelligent summary</div>
+            </div>
+
+            <div class="distribution-container">
+                <div class="share-methods">
+                    <!-- Email sharing -->
+                    <div class="share-method">
+                        <div class="method-icon">
+                            <span class="material-symbols-outlined">email</span>
+                        </div>
+                        <div class="method-content">
+                            <div class="method-title">Email Distribution</div>
+                            <div class="method-description">Send to stakeholders instantly</div>
+                            <div class="email-input">
+                                <input id="emails" type="text" placeholder="Enter email addresses (comma-separated)">
+                                <button class="action-btn primary" id="sendEmail">
+                                    <span class="material-symbols-outlined">send</span>
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Export options -->
+                    <div class="export-grid">
+                        <button class="export-option" id="exportPDF">
+                            <span class="material-symbols-outlined">picture_as_pdf</span>
+                            <span>Export PDF</span>
+                        </button>
+                        <button class="export-option" id="exportWord">
+                            <span class="material-symbols-outlined">description</span>
+                            <span>Word Doc</span>
+                        </button>
+                        <button class="export-option" id="exportSlack">
+                            <span class="material-symbols-outlined">chat</span>
+                            <span>Slack</span>
+                        </button>
+                        <button class="export-option" id="exportNotion">
+                            <span class="material-symbols-outlined">note</span>
+                            <span>Notion</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="share-status" id="shareStatus"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating AI assistant -->
+    <div class="ai-assistant" id="aiAssistantPanel">
+        <div class="assistant-header">
+            <div class="assistant-avatar">
+                <span class="material-symbols-outlined">psychology</span>
+            </div>
+            <div class="assistant-info">
+                <div class="assistant-name">Nexus AI</div>
+                <div class="assistant-status">Ready to help</div>
+            </div>
+            <button class="close-btn" id="closeAssistant">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="assistant-content">
+            <div class="suggestion-chips">
+                <button class="suggestion-chip">Improve summary clarity</button>
+                <button class="suggestion-chip">Extract key decisions</button>
+                <button class="suggestion-chip">Generate action items</button>
             </div>
         </div>
-
-        <div class="grid">
-            <div class="section card reveal">
-                <label>Transcript</label>
-                <textarea id="transcript" readonly title="Transcript preview"
-                    placeholder="Transcript will appear here after upload"></textarea>
-            </div>
-
-            <div class="section card reveal">
-                <label>Prompt</label>
-                <div class="row">
-                    <input id="prompt" type="text" placeholder="Summarize in bullet points for executives" />
-                    <button class="btn" id="setPrompt">Save Prompt</button>
-                </div>
-                <div class="actions">
-                    <button class="btn primary" id="genSummary">Generate Summary</button>
-                </div>
-                <label class="mt-075">Summary (editable)</label>
-                <textarea id="summary" title="Editable summary"
-                    placeholder="Generated summary will appear here; you can edit before sharing"></textarea>
-                <div class="actions">
-                    <button class="btn" id="saveEdits">Save Edits</button>
-                    <button class="btn" id="copySummary" title="Copy summary to clipboard">Copy</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="section card reveal">
-            <label>Share via Email</label>
-            <div class="row">
-                <input id="emails" type="text" placeholder="alice@example.com, bob@example.com" />
-                <button class="btn" id="share">Send Email</button>
-            </div>
-            <div id="shareStatus" class="small mt-05"></div>
-        </div>
-
-        <footer class="footer small">Tip: Save your edits before sharing to ensure emails include your changes.</footer>
     </div>
 
-    <div id="busy" class="busy hidden" aria-live="polite" aria-busy="true">
-        <div class="spinner"></div>
-        <div>Working…</div>
+    <!-- Global loading overlay -->
+    <div id="globalLoader" class="global-loader hidden">
+        <div class="loader-content">
+            <div class="neural-loader">
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+            </div>
+            <div class="loader-text">Processing with AI...</div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- Toast container -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <script src="./main.js"></script>
-    <script>
-        // Theme toggle (light/dark)
-        const root = document.documentElement;
-        document.getElementById('themeToggle')?.addEventListener('click', () => {
-            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            root.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
-        (function initTheme() {
-            const saved = localStorage.getItem('theme');
-            if (saved) root.setAttribute('data-theme', saved);
-        })();
-    </script>
 </body>
 
 </html>
